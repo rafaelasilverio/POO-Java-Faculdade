@@ -1,4 +1,5 @@
-public class ex07 {
+public class ex07 
+{
     public static void main(String[] args){
         int preco = 10;
         if (preco < 0)
