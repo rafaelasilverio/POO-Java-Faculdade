@@ -1,4 +1,5 @@
-public class ex16 {
+public class ex16 
+{
     public static void main(String[] args)
     {
         String teste = "amigo";

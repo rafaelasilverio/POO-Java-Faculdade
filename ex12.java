@@ -1,4 +1,5 @@
-public class ex12 {
+public class ex12 
+{
     public static void main(String[] args) 
     {
         int contador = -100;

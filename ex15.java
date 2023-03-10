@@ -1,4 +1,5 @@
-public class ex15 {
+public class ex15 
+{
     public static void main(String[] args)
     {
         for(int cont = 100; cont >= 50; cont--)
