@@ -13,14 +13,15 @@ public class ex21 {
 
         System.out.println();
         System.out.println("--------Sequência de Fibonacci até o "+tamanho+"º elemento--------");
-        System.out.println(n1);
-        System.out.println(n2);
+        System.out.println("Elemento 1: "+n1);
+        System.out.println("Elemento 2: "+n2);
 
         for (int i = 2; i < tamanho; ++i) {
             n3 = n1 + n2;
-            System.out.println(n3);
+            System.out.println("Elemento "+(i+1)+": "+n3);
             n1 = n2;
             n2 = n3;
         }
+        entrada.close();
     }
 }
