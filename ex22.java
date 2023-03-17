@@ -1,7 +1,9 @@
 import java.util.Scanner;
 
-public class ex22 {
-    public static void main(String[] args) {
+public class ex22 
+{
+    public static void main(String[] args) 
+    {
         int dias, horas, minutos, segundos, resultadoEmSegundos;
         Scanner leitura = new Scanner(System.in);
 

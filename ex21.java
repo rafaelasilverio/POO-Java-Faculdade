@@ -1,7 +1,9 @@
 import java.util.Scanner;
 
-public class ex21 {
-    public static void main(String[] args) {
+public class ex21 
+{
+    public static void main(String[] args) 
+    {
         int n1 = 0, n2 = 1, n3, tamanho = 0;
 
         Scanner entrada = new Scanner(System.in);
