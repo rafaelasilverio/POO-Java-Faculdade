@@ -1,21 +1,32 @@
 class Conta
 {
-    String numero;
-    double saldo;
+    private String nro;
+    private double saldo;
 
-    public Conta(String nro, double saldoInicial)
+    public Conta(String nro, double saldo)
     {
-        numero = nro;
-        saldo = saldoInicial;
+        this.nro = nro;
+        this.saldo = saldo;
     }
 
-    void credito(double valor)
+    public void depositar(double valor)
     {
-        saldo = saldo + valor;
+        this.saldo += valor;
     }
 
-    void debito(double valor)
+    public void sacar(double valor)
     {
-        saldo = saldo - valor;
+        this.saldo -= valor;
     }
+
+    public String getNumero()
+    {
+        return this.nro;
+    }
+
+    public double getSaldo()
+    {
+        return this.saldo;
+    }
+
 }
