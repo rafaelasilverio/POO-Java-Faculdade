@@ -2,7 +2,8 @@ import java.util.Scanner;
 import java.util.Random; 
 
 public class ex28 {
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
         int A[][] = new int[3][5], X, r;
 
         Scanner entrada = new Scanner(System.in);
