@@ -1,8 +1,9 @@
 package aula10_ex02;
+
 import java.util.Scanner;
 
 public class Aula10_ex02 {
-  public static void main(String[] args){
+  public static void main(String[] args) {
 
     Pessoa p = new Pessoa();
 
@@ -25,10 +26,8 @@ public class Aula10_ex02 {
     Float altura = console.nextFloat();
 
     p.setaltura(altura);
-
     p.exibedados();
-
+    console.close();
   }
 
 }
-
