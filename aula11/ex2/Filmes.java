@@ -1,20 +1,26 @@
 package aula11.ex2;
 
-import java.util.Scanner;
-
-public class Filmes {
+public class Filmes 
+{
     private int codigo;
     private String nome;
     private String categoria;
-    private String atoresPrincipais[];
+    private String[] atoresPrincipais;
     private int anoLancamento;
-
-    Scanner entrada = new Scanner(System.in);
 
     public Filmes()
     {
-        this.nome = "";
-        this.categoria = "comedia";
+        this.nome = "Sem nome";
+        this.categoria = "Sem categoria";
+    }
+
+    public Filmes (int codigo, String[] atoresPrincipais, int anoLancamento) 
+    {
+        this.codigo = codigo;
+        this.nome = "Sem nome";
+        this.categoria = "Sem categoria";
+        this.atoresPrincipais = atoresPrincipais;
+        this.anoLancamento = anoLancamento;
     }
 
     public int getCodigo()
@@ -45,17 +51,19 @@ public class Filmes {
         this.categoria = categoria;
     }
 
-    public void getAtoresPrincipais()
+    public String[] getAtoresPrincipais() 
     {
-        for(int i = 0; i < 10; i++)
-        {
-            System.out.println(i+"."+this.atoresPrincipais[i]);
-        }
+        return this.atoresPrincipais;
     }
 
-    public void getAtoresPrincipais(int index)
+    public String getAtoresPrincipais(int index)
     {
-         System.out.println(this.atoresPrincipais[index]); 
+        return this.atoresPrincipais[index]; 
+    }
+
+    public void setAtoresPrincipais(String[] atoresPrincipais) 
+    {
+        this.atoresPrincipais = atoresPrincipais;
     }
 
     public void setAtoresPrincipais(int index, String novoAtor)
@@ -73,30 +81,28 @@ public class Filmes {
         this.anoLancamento = novoAno;
     }
 
-    public void exibeDadosFilme() 
-    {
-      System.out.println("Código: " + getCodigo());
-      System.out.println("Nome: " + getNome());
-      System.out.println("Categoria: " + getCategoria());
-      System.out.println("Atores principais: ");
-      this.getAtoresPrincipais();
-      System.out.println("Ano de lançamento: " + getAnoLancamento());
+    public void exibeDadosFilme() {
+        System.out.println("Código: " + codigo);
+        System.out.println("Nome: " + nome);
+        System.out.println("Categoria: " + categoria);
+        System.out.println("Atores principais: ");
+        for (String ator : atoresPrincipais) {
+            System.out.println(ator);
+        }
+        System.out.println("Ano de lançamento: " + anoLancamento);
     }
 
-    public static void main(String[] args) 
-    {
-        Filmes filmes = new Filmes();
-        filmes.setCodigo(1);
-        filmes.setNome("A volta dos que nao foram");
-        filmes.setCategoria("Drama");
-        for(int i = 0; i < 10; i++)
-        {
-            String nome;
-            System.out.println("Informe o nome do ator "+i+": ");
-            nome = entrada.nextLine(); //finalizar
-            filmes.setAtoresPrincipais(i, nome);
-        }
-        filmes.setAnoLancamento(2020);
-        filmes.exibeDadosFilme();
+    public static void main(String[] args) {
+        String[] atores = {"Ator 1", "Ator 2", "Ator 3", "Ator 4", "Ator 5", "Ator 6", "Ator 7", "Ator 8", "Ator 9", "Ator 10"};
+        String[] atores2 = {"Ana de Armas", "Angelina Jolie", "Ben Affleck", "Anthony Hopkins", "Kate Winslet", "Pedro Pascal", "Keanu Reeves", "Lupita Nyong'o", "Nicole Kidman", "Will Smith"};
+        Filmes filme = new Filmes(123, atores, 2020);
+        filme.setNome("Filme X");
+        filme.setCategoria("Comédia");
+        filme.exibeDadosFilme();
+        filme.setAtoresPrincipais(atores2); //testando setAtoresPrincipais com um novo array
+        filme.exibeDadosFilme();
+        filme.setAtoresPrincipais(2, "Tom Hanks"); //testando setAtoresPrincipais trocando um único ator (Ben Affleck => Tom Hanks)
+        filme.exibeDadosFilme();
     }
+    
 }
