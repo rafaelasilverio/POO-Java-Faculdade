@@ -1,28 +1,48 @@
 package ex1;
+
+import java.util.Scanner;
+
 public class CD extends Midia{
     private int nMusicas;
 
-    public CD(){}
-
-    public CD(int c, double p, String s, int m)
+    public CD()
     {
-        Midia novoDVD = new Midia(c, p, s);
-        this.nMusicas = m;
+        this(0,0.0,"Nenhum", 0);
     }
+
+    public CD(int cod, double pre, String nom, int nMusicas)
+    {
+        super(cod, pre, nom);
+        setMusicas(nMusicas);
+    }
+
+    // public String getTipo()
+    // {
+    //     return this.getClass().getName();
+    // }
 
     public String getTipo()
     {
-        return this.getClass().getName();
+        return "CD: ";
     }
 
     public String getDetalhes()
     {
-        String detalhes = "Codigo: "+super.getCodigo()+"\n Preco: "+super.getPreco()+"\n Nome: "+super.getNome()+"\n Tipo: "+this.getTipo();
-        return detalhes;
+        return super.getDetalhes()+"\n Numero de musicas: " + nMusicas + "\n";
     }
 
-    public void setMusicas(int m)
+    public void setMusicas(int nmus)
     {
-        this.nMusicas = m;
+        nMusicas = (nmus > 0) ? nmus : 0; //WTF??
     }
+
+    public void inserirDados()
+    {
+        super.inserirDados();
+        Scanner in = new Scanner(System.in);
+        System.out.println("\n Entre com o numero de musicas: ");
+        int nmus = in.nextInt();
+        setMusicas(nmus);
+    }
+
 }
